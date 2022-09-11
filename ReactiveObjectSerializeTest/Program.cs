@@ -47,36 +47,7 @@ namespace ReactiveObjectSerializeTest
 
         public sealed class ProductInformations : ReactiveObject
         {
-           
-            public static Comparison<ProductInformations?> SortAscending(Func<ProductInformations, string> selector)
-            {
-                return (x, y) =>
-                {
-                    if (x is null && y is null)
-                        return 0;
-                    else if (x is null)
-                        return -1;
-                    else if (y is null)
-                        return 1;
-                    else
-                        return string.Compare(selector(x), selector(y));
-                };
-            }
-
-            public static Comparison<ProductInformations?> SortDescending(Func<ProductInformations, string> selector)
-            {
-                return (x, y) =>
-                {
-                    if (x is null && y is null)
-                        return 0;
-                    else if (x is null)
-                        return 1;
-                    else if (y is null)
-                        return -1;
-                    else
-                        return string.Compare(selector(y), selector(x));
-                };
-            }
+             
 
             private string? product;
             private bool? outofstock = false;
